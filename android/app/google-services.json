@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025965297517",
+    "project_id": "faketwitter23-7b4ad",
+    "storage_bucket": "faketwitter23-7b4ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025965297517:android:91960df728c8b147e51464",
+        "android_client_info": {
+          "package_name": "com.example.faketwitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025965297517-dg8l1a7po9eihd3n6ebgvcsn5u6ti7gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGSuz7VApbKbdN87Oe7ilbidXO7nfZjxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025965297517-dg8l1a7po9eihd3n6ebgvcsn5u6ti7gj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

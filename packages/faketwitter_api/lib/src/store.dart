@@ -1,21 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+part of 'faketwitter_api.dart';
 
 /// Common Wrapper for all store endpoints
-class Store {
-  Store(FirebaseFirestore store)
+class _Store {
+  _Store(FirebaseFirestore store)
       : _store = store,
-        userStore = UserStore(store);
+        userStore = _UserStore(store);
 
   /// Instance of FirebaseFirestore
   final FirebaseFirestore _store;
 
   /// Instance of UserStore
   /// Encapsulates all UserStore endpoints
-  final UserStore userStore;
+  final _UserStore userStore;
 }
 
-class UserStore {
-  const UserStore(FirebaseFirestore store) : _store = store;
+class _UserStore {
+  const _UserStore(FirebaseFirestore store) : _store = store;
 
   /// Instance Of FirebaseFirestore
   final FirebaseFirestore _store;

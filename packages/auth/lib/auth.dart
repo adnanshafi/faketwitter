@@ -1,3 +1,4 @@
-int calculate() {
-  return 6 * 7;
-}
+library auth;
+
+export 'src/auth.dart';
+export 'src/user.dart';

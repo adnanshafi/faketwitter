@@ -1,13 +1,17 @@
 name: auth
 description: A sample command-line application.
 version: 1.0.0
-# homepage: https://www.example.com
+publish_to: none
 
 environment:
   sdk: '>=2.17.5 <3.0.0'
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  mem_cache:
+    path: ../mem_cache
+  firebase_auth: ^3.4.1
+  equatable: ^2.0.3
+
 
 dev_dependencies:
   lints: ^2.0.0
