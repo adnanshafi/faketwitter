@@ -6,8 +6,8 @@ part 'user.g.dart';
 /// Model For User Data Stored For Fake Twitter
 
 @JsonSerializable()
-class User extends Equatable {
-  const User({
+class UserData extends Equatable {
+  const UserData({
     this.storePath = '',
     this.uid = '',
     this.userName = '',
@@ -32,10 +32,10 @@ class User extends Equatable {
   final String description;
 
   /// [empty] : empty User with no data
-  static const User empty = User();
+  static const UserData empty = UserData();
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory UserData.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   @override
   List<Object?> get props => [uid, storePath, userName, avatarUrl, description];
