@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auth/auth.dart' as auth;
 import 'package:faketwitter/entry_point/entry_point.dart';
 
+part 'theme.dart';
+
 class App extends StatelessWidget {
   const App({
     Key? key,
