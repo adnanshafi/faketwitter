@@ -10,6 +10,8 @@ class User extends Equatable {
   /// An Empty User
   static const User empty = User(uid: '-1');
 
+  bool get isEmpty => this == empty;
+
   User copyWith({String? uid}) => User(uid: uid ?? this.uid);
 
   @override
