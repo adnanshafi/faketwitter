@@ -37,6 +37,8 @@ dependencies:
     path: packages/auth
   faketwitter_api:
     path: packages/faketwitter_api
+  form_inputs:
+    path: packages/form_inputs
   google_fonts: ^3.0.1
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1

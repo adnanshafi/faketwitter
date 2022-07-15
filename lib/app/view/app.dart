@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auth/auth.dart' as auth;
 import 'package:faketwitter/entry_point/entry_point.dart';
+import 'package:faketwitter/onboard/onboard.dart';
 
 part 'theme.dart';
 
@@ -50,6 +51,7 @@ class AppView extends StatelessWidget {
     return MaterialApp(
       routes: {
         EntryPoint.route: (context) => const EntryPoint(),
+        OnboardScreen.route: (context) => const OnboardScreen(),
       },
     );
   }

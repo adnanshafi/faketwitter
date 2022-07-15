@@ -1,6 +1,7 @@
 import 'package:faketwitter/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:faketwitter/onboard/onboard.dart';
 
 class EntryPoint extends StatelessWidget {
   const EntryPoint({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class EntryPoint extends StatelessWidget {
           return Text('authenticated');
         }
         if (state.isUnauthenticated) {
-          return Text('unauthenticated');
+          return const OnboardScreen();
         }
         return Container();
       },
