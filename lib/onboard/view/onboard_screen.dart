@@ -1,7 +1,9 @@
+import 'package:faketwitter/auth_page/create_account/view/create_account_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:faketwitter/intro_pages/intro_pages.dart';
 import 'package:faketwitter/onboard/onboard.dart';
+import 'package:faketwitter/auth_page/auth_page.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({Key? key}) : super(key: key);
@@ -17,8 +19,7 @@ class OnboardScreen extends StatelessWidget {
             case PageType.intro:
               return const IntroPages();
             case PageType.createAccount:
-              // return Create Account Page
-              break;
+              return const CreateAccountPage();
             case PageType.login:
               // return Login Page
               break;

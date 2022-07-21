@@ -27,36 +27,38 @@ class _IntroPagesState extends State<IntroPages> {
         listenWhen: (p, c) => p.currentPageIndex != c.currentPageIndex,
         listener: (context, state) {},
         child: Scaffold(
-          body: Column(
-            children: [
-              Row(
-                children: [
-                  Builder(builder: (ctx) {
-                    return TextButton(
-                        onPressed: () {
-                          ctx.read<OnboardCubit>().loadCreateAccountPage();
-                        },
-                        child: Text('create account'));
-                  }),
-                  Builder(builder: (ctx) {
-                    return TextButton(
-                        onPressed: () {
-                          ctx.read<OnboardCubit>().loadLoginPage();
-                        },
-                        child: Text('login'));
-                  }),
-                ],
-              ),
-              Spacer(),
-              Row(
-                children: [
-                  IndicatorItem(index: 0),
-                  IndicatorItem(index: 1),
-                  IndicatorItem(index: 2),
-                  IndicatorItem(index: 3),
-                ],
-              )
-            ],
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    Builder(builder: (ctx) {
+                      return TextButton(
+                          onPressed: () {
+                            ctx.read<OnboardCubit>().loadCreateAccountPage();
+                          },
+                          child: Text('create account'));
+                    }),
+                    Builder(builder: (ctx) {
+                      return TextButton(
+                          onPressed: () {
+                            ctx.read<OnboardCubit>().loadLoginPage();
+                          },
+                          child: Text('login'));
+                    }),
+                  ],
+                ),
+                Row(
+                  children: [
+                    IndicatorItem(index: 0),
+                    IndicatorItem(index: 1),
+                    IndicatorItem(index: 2),
+                    IndicatorItem(index: 3),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
