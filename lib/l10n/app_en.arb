@@ -1,0 +1,6 @@
+{
+    "appName" : "Fake Twitter",
+    
+    "createAccountButtonLoginInstead" : "Login Instead",
+    "createAccountButtonBack" : "Go Back"
+}
