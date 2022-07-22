@@ -2,5 +2,11 @@
     "appName" : "Fake Twitter",
     
     "createAccountButtonLoginInstead" : "Login Instead",
-    "createAccountButtonBack" : "Go Back"
+    "createAccountButtonSubmit" : "Create Account",
+    "createAccountButtonBack" : "Go Back",
+
+    "createAccountTitle": "Create\nAccount",
+    "createAccountFieldEmail" : "Email",
+    "createAccountFieldPassword" : "Password",
+    "createAccountFieldConfirmPassword" : "Confirm Password"
 }

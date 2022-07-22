@@ -1,10 +1,12 @@
 import 'package:faketwitter/app/app.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auth/auth.dart' as auth;
 import 'package:faketwitter/entry_point/entry_point.dart';
 import 'package:faketwitter/onboard/onboard.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'theme.dart';
 
@@ -49,8 +51,10 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // FirebaseAuth.instance.signOut();
     return MaterialApp(
       localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

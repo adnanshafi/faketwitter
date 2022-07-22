@@ -37,6 +37,11 @@ class PasswordConfirmChanged extends CreateAccountEvent {
   List<Object> get props => [value];
 }
 
+/// Toggle password visibility
+class PasswordVisibilityToggled extends CreateAccountEvent {
+  const PasswordVisibilityToggled();
+}
+
 /// Create Account Error from Auth Repo
 /// [errorString] : error description
 class CreateAccountError extends CreateAccountEvent {

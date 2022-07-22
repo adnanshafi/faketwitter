@@ -39,11 +39,6 @@ class _IntroPageHolder extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.amber,
       body: Center(),
-      bottomNavigationBar: Container(
-        height: 30,
-        width: 50,
-        color: Colors.green,
-      ),
     );
   }
 }

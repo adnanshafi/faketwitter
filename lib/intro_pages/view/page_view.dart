@@ -27,6 +27,7 @@ class _IntroPagesState extends State<IntroPages> {
         listenWhen: (p, c) => p.currentPageIndex != c.currentPageIndex,
         listener: (context, state) {},
         child: Scaffold(
+          backgroundColor: Colors.greenAccent,
           body: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
