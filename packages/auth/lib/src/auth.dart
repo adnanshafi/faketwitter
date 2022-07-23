@@ -101,7 +101,7 @@ extension on firebase_auth.FirebaseAuthException {
       case 'wrong-password':
         return 'The password you entered is invalid';
       default:
-        return '';
+        return 'Something went wrong';
     }
   }
 }

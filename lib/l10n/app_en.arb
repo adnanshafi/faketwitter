@@ -8,5 +8,12 @@
     "createAccountTitle": "Create\nAccount",
     "createAccountFieldEmail" : "Email",
     "createAccountFieldPassword" : "Password",
-    "createAccountFieldConfirmPassword" : "Confirm Password"
+    "createAccountFieldConfirmPassword" : "Confirm Password",
+
+    "loginTitle" : "Login",
+    "loginButton": "Login",
+    "loginButtonCreateAccountInsted" : "Create Account Instead",
+    
+    "loginFieldLabelEmail" : "Email",
+    "loginFieldLabelPassword" : "Password"
 }
