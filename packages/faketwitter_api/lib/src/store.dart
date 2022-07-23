@@ -31,20 +31,4 @@ class _UserStore {
   DocumentReference userDataDocumentReference(String uid) {
     return userDataCollectionReference.doc(uid);
   }
-
-  /// [tempUserDataCollectionReference] : Collection to store temporary user data
-  /// for new users without login
-  ///
-  /// This temp document gets copied to /user_data/ after auth
-  ///
-  /// /temp_user_data/{auto-id}
-  CollectionReference get tempUserDataCollectionReference =>
-      _store.collection('temp_user_data');
-
-  /// doc from tempUserData collection
-  /// [docId] : documentId of document
-  /// /temp_user_data/{docId}
-  DocumentReference tempUserDataDocumentReference(String docId) {
-    return tempUserDataCollectionReference.doc(docId);
-  }
 }

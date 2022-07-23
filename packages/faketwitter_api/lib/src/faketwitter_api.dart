@@ -13,10 +13,56 @@ class FakeTwitterApi {
   final _Store _store;
   final MemCache _cache;
 
-  Future<void> setUserData(UserData userData, {String uid = ''}) async {
+  Future<void> setUserData(
+    UserData userData, {
+    String uid = '',
+    Function(String s)? onFailure,
+    Function()? onSuccess,
+  }) async {
     String _uid = uid.isEmpty ? userData.uid : uid;
-    await _store.userStore
-        .userDataDocumentReference(_uid)
-        .set(userData.toJson());
+
+    try {
+      await _store.userStore
+          .userDataDocumentReference(_uid)
+          .set(userData.toJson());
+
+      if (onSuccess != null) onSuccess();
+    } on FirebaseException catch (e) {
+      if (onFailure != null) onFailure(errorMessageStore);
+    } on Exception catch (e) {
+      if (onFailure != null) onFailure(errorMessageGeneral);
+    }
+  }
+
+  Future<UserData> getUserData(
+    String uid, {
+    Function(String s)? onFailure,
+    Function()? onSuccess,
+  }) async {
+    try {
+      final response =
+          await _store.userStore.userDataDocumentReference(uid).get();
+      // if not exists >> send back empty
+      if (!response.exists) {
+        return UserData.empty;
+      }
+
+      // Parse response
+      final userData = UserData.fromJson(response.data() as Json);
+
+      // return UserData
+      return userData;
+    } on FirebaseException catch (e) {
+      if (onFailure != null) onFailure(errorMessageStore);
+      return UserData.empty;
+    } on Exception catch (e) {
+      if (onFailure != null) onFailure(errorMessageGeneral);
+      return UserData.empty;
+    }
   }
 }
+
+const String errorMessageStore = 'Something Wrong With Server!';
+const String errorMessageGeneral = 'Something else went wrong';
+
+typedef Json = Map<String, dynamic>;
