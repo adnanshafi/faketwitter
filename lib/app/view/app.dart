@@ -1,4 +1,5 @@
 import 'package:faketwitter/app/app.dart';
+import 'package:faketwitter_api/faketwitter_api.dart' as f_api;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,14 +15,17 @@ class App extends StatelessWidget {
   const App({
     Key? key,
     required this.authRepo,
+    required this.api,
   }) : super(key: key);
   final auth.Auth authRepo;
+  final f_api.FakeTwitterApi api;
 
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<auth.Auth>(create: (context) => authRepo),
+        RepositoryProvider(create: (context) => api),
       ],
       child: const AppBloc(),
     );
@@ -40,6 +44,14 @@ class AppBloc extends StatelessWidget {
             context.read<auth.Auth>(),
           ),
         ),
+        BlocProvider<DataBloc>(
+          create: (context) {
+            return DataBloc(
+              authBloc: context.read<AuthBloc>(),
+              api: context.read<f_api.FakeTwitterApi>(),
+            );
+          },
+        )
       ],
       child: const AppView(),
     );

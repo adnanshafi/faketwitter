@@ -34,6 +34,9 @@ class UserData extends Equatable {
   /// [empty] : empty User with no data
   static const UserData empty = UserData();
 
+  /// if empty
+  bool get isEmpty => this == UserData.empty;
+
   Map<String, dynamic> toJson() => _$UserToJson(this);
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
