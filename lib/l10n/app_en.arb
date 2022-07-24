@@ -4,7 +4,6 @@
     "createAccountButtonLoginInstead" : "Login Instead",
     "createAccountButtonSubmit" : "Create Account",
     "createAccountButtonBack" : "Go Back",
-
     "createAccountTitle": "Create\nAccount",
     "createAccountFieldEmail" : "Email",
     "createAccountFieldPassword" : "Password",
@@ -13,7 +12,17 @@
     "loginTitle" : "Login",
     "loginButton": "Login",
     "loginButtonCreateAccountInsted" : "Create Account Instead",
-    
     "loginFieldLabelEmail" : "Email",
-    "loginFieldLabelPassword" : "Password"
+    "loginFieldLabelPassword" : "Password",
+
+    "createProfileTitle" : "Create Your Profile",
+    "createProfileTitleHelp" : "Seems like you haven't set up your profile yet",
+    "createProfileAvatarHelp" : "Tap To Choose An Avatar",
+    "createProfileAvatarDialogTitle" : "Choose An Avatar",
+    "createProfileFieldName" : "Name",
+    "createProfileFieldUsername" : "Username",
+    "createProfileUsernameAvailable" : " is avaialable",
+    "createProfileUsernameNotAvailable" : "is already taken",
+    "createProfileFieldDescription" : "Describe Yourself",
+    "createProfileButtonSubmit" : "Save"
 }

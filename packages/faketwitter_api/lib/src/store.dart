@@ -31,4 +31,13 @@ class _UserStore {
   DocumentReference userDataDocumentReference(String uid) {
     return userDataCollectionReference.doc(uid);
   }
+
+  /// Query UserData with `username`
+  /// /user_data/{where username == username}
+  Query userDataWithUsername(String username) {
+    return userDataCollectionReference.where(
+      UserDataKeys.keyUsername,
+      isEqualTo: username,
+    );
+  }
 }

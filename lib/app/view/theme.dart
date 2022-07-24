@@ -1,3 +1,6 @@
 part of 'app.dart';
 
-ThemeData lightTheme = ThemeData(colorSchemeSeed: Color(0xfff8d210));
+ThemeData lightTheme = ThemeData(
+  primaryColor: Colors.greenAccent,
+  fontFamily: GoogleFonts.overpassMono().fontFamily,
+);

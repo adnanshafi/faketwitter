@@ -7,14 +7,10 @@ abstract class DataEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class ClearData extends DataEvent {}
+class ClearData extends DataEvent {
+  const ClearData();
+}
 
 class FetchData extends DataEvent {
-  const FetchData(this.uid);
-
-  final String uid;
-
-  @override
-  // TODO: implement props
-  List<Object> get props => [uid];
+  const FetchData();
 }

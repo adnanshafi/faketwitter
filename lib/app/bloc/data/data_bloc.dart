@@ -16,24 +16,25 @@ class DataBloc extends Bloc<DataEvent, DataState> {
   DataBloc({
     required AuthBloc authBloc,
     required FakeTwitterApi api,
-  })  : _api = api,
+  })  : _authBloc = authBloc,
+        _api = api,
         super(const DataState()) {
     // Register listeners
     on<FetchData>(_onFetchData);
     on<ClearData>(_onClearData);
 
-    add(FetchData(authBloc.state.user.uid));
+    add(FetchData());
 
     _authSub = authBloc.stream.listen(
       (state) {
         if (state.isAuthenticated) {
-          add(FetchData(state.user.uid));
+          add(const FetchData());
         }
         if (state.isUnauthenticated) {
-          add(ClearData());
+          add(const ClearData());
         }
         if (state.isUnknown) {
-          add(ClearData());
+          add(const ClearData());
         }
       },
     );
@@ -41,6 +42,9 @@ class DataBloc extends Bloc<DataEvent, DataState> {
 
   // Auth Bloc Subscription
   late final StreamSubscription<AuthState> _authSub;
+
+  // Auth Bloc
+  final AuthBloc _authBloc;
 
   // Api
   final FakeTwitterApi _api;
@@ -52,13 +56,13 @@ class DataBloc extends Bloc<DataEvent, DataState> {
     emit(state.copyWith(status: Status.hardLoading));
 
     final userData = await _api.getUserData(
-      event.uid,
+      _authBloc.state.user.uid,
       onFailure: (s) {},
     );
 
     return emit(state.copyWith(
       userData: userData,
-      uid: event.uid,
+      uid: _authBloc.state.user.uid,
       status: Status.loaded,
     ));
   }

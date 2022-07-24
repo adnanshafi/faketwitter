@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
+part 'keys.dart';
 
 /// Model For User Data Stored For Fake Twitter
 
@@ -11,6 +12,7 @@ class UserData extends Equatable {
     this.storePath = '',
     this.uid = '',
     this.userName = '',
+    this.name = '',
     this.avatarUrl = '',
     this.description = '',
   });
@@ -25,6 +27,9 @@ class UserData extends Equatable {
   /// [userName] : user name of the user
   final String userName;
 
+  /// [name] : displayName
+  final String name;
+
   /// [avatarUrl] : url of the user avatar stored in cloud_storage
   final String avatarUrl;
 
@@ -37,9 +42,11 @@ class UserData extends Equatable {
   /// if empty
   bool get isEmpty => this == UserData.empty;
 
-  Map<String, dynamic> toJson() => _$UserToJson(this);
-  factory UserData.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  Map<String, dynamic> toJson() => _$UserDataToJson(this);
+  factory UserData.fromJson(Map<String, dynamic> json) =>
+      _$UserDataFromJson(json);
 
   @override
-  List<Object?> get props => [uid, storePath, userName, avatarUrl, description];
+  List<Object?> get props =>
+      [uid, storePath, name, userName, avatarUrl, description];
 }

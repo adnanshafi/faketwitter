@@ -8,6 +8,7 @@ import 'package:faketwitter/entry_point/entry_point.dart';
 import 'package:faketwitter/onboard/onboard.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 part 'theme.dart';
 
@@ -78,6 +79,7 @@ class AppView extends StatelessWidget {
         EntryPoint.route: (context) => const EntryPoint(),
         OnboardScreen.route: (context) => const OnboardScreen(),
       },
+      theme: lightTheme,
     );
   }
 }

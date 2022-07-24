@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "faketwitter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "faketwitter (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "faketwitter (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "auth",
+            "cwd": "packages/auth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "faketwitter_api",
+            "cwd": "packages/faketwitter_api",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "form_inputs",
+            "cwd": "packages/form_inputs",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "mem_cache",
+            "cwd": "packages/mem_cache",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "models",
+            "cwd": "packages/models",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

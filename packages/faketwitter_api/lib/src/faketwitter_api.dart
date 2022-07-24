@@ -60,6 +60,17 @@ class FakeTwitterApi {
       return UserData.empty;
     }
   }
+
+  /// Check if `username` is Avaialable
+  /// Add Error Handling
+  Future<bool> checkUsernameAvailability(String username) async {
+    final response =
+        await _store.userStore.userDataWithUsername(username).get();
+    if (response.docs.isEmpty) {
+      return true;
+    }
+    return false;
+  }
 }
 
 const String errorMessageStore = 'Something Wrong With Server!';
