@@ -56,4 +56,13 @@ class _TweetStore {
   DocumentReference getTweetDocumentReferenceByID(String tweetId) {
     return tweetsCollectionReference.doc(tweetId);
   }
+
+  Query getTweetsByUser(String uid) {
+    return tweetsCollectionReference
+        .where(
+          TweetKeys.keyCreatorUid,
+          isEqualTo: uid,
+        )
+        .orderBy(TweetKeys.keyTimeCreated);
+  }
 }

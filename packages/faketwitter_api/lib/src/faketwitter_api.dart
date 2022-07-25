@@ -86,6 +86,19 @@ class FakeTwitterApi {
       if (onFailure != null) onFailure('Something went wrong');
     }
   }
+
+  Future<List<Tweet>> getRecentTweetsByUser(String uid) async {
+    final response = await _store.tweetStore.getTweetsByUser(uid).get();
+    final tweets = response.docs.map(
+      (r) {
+        return Tweet.fromJson(
+          r.data() as Json,
+          storePath: r.reference.path,
+        );
+      },
+    ).toList();
+    return tweets;
+  }
 }
 
 const String errorMessageStore = 'Something Wrong With Server!';

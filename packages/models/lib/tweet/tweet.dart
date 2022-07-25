@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 
 part 'tweet.g.dart';
+part 'keys.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Tweet extends Equatable {

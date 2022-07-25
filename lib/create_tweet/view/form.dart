@@ -8,19 +8,24 @@ class _Form extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CreateTweetBloc, CreateTweetState>(
-      listener: (context, state) {
-        if (state.isSuccess) {
-          Navigator.of(context).pop();
-        }
-      },
-      listenWhen: (p, c) {
-        if (!p.isSuccess && c.isSuccess) return true;
-        // if (!p.hasError && c.hasError) return true;
-        return false;
-      },
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: BlocListener<CreateTweetBloc, CreateTweetState>(
+        listener: (context, state) {
+          if (state.isSuccess) {
+            Navigator.of(context).pop();
+          }
+          if (state.hasError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Something Went Wrong!')),
+            );
+          }
+        },
+        listenWhen: (p, c) {
+          if (!p.isSuccess && c.isSuccess) return true;
+          if (!p.hasError && c.hasError) return true;
+          return false;
+        },
+        child: Padding(
           padding: _pagePadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,8 +36,8 @@ class _Form extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: const _SubmitButton(),
       ),
+      floatingActionButton: const _SubmitButton(),
     );
   }
 }
