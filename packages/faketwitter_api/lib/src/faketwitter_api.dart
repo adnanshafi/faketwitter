@@ -71,6 +71,21 @@ class FakeTwitterApi {
     }
     return false;
   }
+
+  Future<void> setTweet(
+    Tweet tweet, {
+    Function()? onSuccess,
+    Function(String message)? onFailure,
+  }) async {
+    try {
+      await _store.tweetStore.tweetsCollectionReference.add(tweet.toJson());
+      if (onSuccess != null) onSuccess();
+    } on FirebaseException catch (e) {
+      if (onFailure != null) onFailure(e.code);
+    } on Exception {
+      if (onFailure != null) onFailure('Something went wrong');
+    }
+  }
 }
 
 const String errorMessageStore = 'Something Wrong With Server!';

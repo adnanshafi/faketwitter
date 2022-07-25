@@ -4,7 +4,8 @@ part of 'faketwitter_api.dart';
 class _Store {
   _Store(FirebaseFirestore store)
       : _store = store,
-        userStore = _UserStore(store);
+        userStore = _UserStore(store),
+        tweetStore = _TweetStore(store);
 
   /// Instance of FirebaseFirestore
   final FirebaseFirestore _store;
@@ -12,6 +13,7 @@ class _Store {
   /// Instance of UserStore
   /// Encapsulates all UserStore endpoints
   final _UserStore userStore;
+  final _TweetStore tweetStore;
 }
 
 class _UserStore {
@@ -39,5 +41,19 @@ class _UserStore {
       UserDataKeys.keyUsername,
       isEqualTo: username,
     );
+  }
+}
+
+class _TweetStore {
+  const _TweetStore(this._store);
+
+  final FirebaseFirestore _store;
+
+  CollectionReference get tweetsCollectionReference {
+    return _store.collection('tweets');
+  }
+
+  DocumentReference getTweetDocumentReferenceByID(String tweetId) {
+    return tweetsCollectionReference.doc(tweetId);
   }
 }
