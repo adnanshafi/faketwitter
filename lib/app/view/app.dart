@@ -9,6 +9,7 @@ import 'package:faketwitter/onboard/onboard.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:faketwitter/create_tweet/create_tweet.dart';
 
 part 'theme.dart';
 
@@ -78,6 +79,7 @@ class AppView extends StatelessWidget {
       routes: {
         EntryPoint.route: (context) => const EntryPoint(),
         OnboardScreen.route: (context) => const OnboardScreen(),
+        CreateTweetPage.route: (context) => const CreateTweetPage(),
       },
       theme: lightTheme,
     );

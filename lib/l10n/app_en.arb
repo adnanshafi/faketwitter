@@ -24,5 +24,9 @@
     "createProfileUsernameAvailable" : " is avaialable",
     "createProfileUsernameNotAvailable" : "is already taken",
     "createProfileFieldDescription" : "Describe Yourself",
-    "createProfileButtonSubmit" : "Save"
+    "createProfileButtonSubmit" : "Save",
+
+    "createTweetPageTitle" : "Create A Fake Tweet",
+    "createTweetPageFieldTweetLabel" : "Whats On Your Mind",
+    "createTweetPageButtonSubmit" : "FakeTweet"
 }

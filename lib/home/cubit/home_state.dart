@@ -1,5 +1,10 @@
 part of 'home_cubit.dart';
 
+enum HomeTabs {
+  home,
+  feed,
+}
+
 abstract class HomeState extends Equatable {
   const HomeState();
 

@@ -1,5 +1,6 @@
 import 'package:faketwitter/app/app.dart';
 import 'package:faketwitter/create_profile/view/create_profile_page.dart';
+import 'package:faketwitter/home/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,16 +18,11 @@ class Home extends StatelessWidget {
         }
 
         if (state.hasProfile) {
-          return Text('Profile');
+          return const HomePage();
         }
         return Scaffold(
           body: Center(
-            child: TextButton(
-              onPressed: () {
-                print(state.userData.toJson());
-              },
-              child: Text('ola'),
-            ),
+            child: CircularProgressIndicator(),
           ),
         );
       },
